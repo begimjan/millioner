@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+img{
+	height: 300px;
+	width:300px;
+	margin-top: 50px;
+	margin-left: 250px;
+}
+.main{
+	background: red;
+	height: 400px;
+	width: 900px;
+		margin-top: 0px;
+}
+.answer{
+	height: 30px;
+	width: 150px;
+	background:white;
+	font-size: 24px;
+	text-align: center;
+	margin-top:5px;
+
+
+}
+
+
+</style>
+
+<div class="main">
+	<img src="logo.png" >
+</div>
+<div class="question">
+	
+</div>
+
+<div class="answer"></div>
+<div class="answer"></div>
+<div class="answer"></div>
+<div class="answer"></div>
+
+<script type="text/javascript">
+    var questions =["сколько мне лет?"," мое имя?"];
+    var answers = [[1,16,14,28],["Бека","Бегимжан","Настя","hejks"]];
+	var question = document.querySelector('.question');
+	var answer = document.querySelectorAll('.answer'); 
+    var count=0;
+    question.innerHTML = questions[count]
+    for(var i=0;i<answer.length;i++){
+    	answer[i].innerHTML = answers[count][i]
+    	answer[i].onclick = function(){
+    	if(this.innerHTML==14){
+    		alert('you win')
+
+        	question.innerHTML = questions[count]
+      		for(var j=0;j<answer.length;j++){
+        		answer[j].innerHTML = answers[count][j]
+   				}
+   				else{
+   					alert('you loose')
+   				}
+			}
+		}
+
+	}
+    	
+    	
+   
+</script>
+</body>
+</html>
